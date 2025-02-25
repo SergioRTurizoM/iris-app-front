@@ -13,7 +13,7 @@ This project is the Angular frontend for the Iris ToDo App.
 2. Run `npm install`.
 3. Configure environments in `src/environments/environment*.ts`.  
    - Development: `apiUrl: 'http://localhost:3000/dev/api/v1'`
-   - Production: `apiUrl: 'https://<your-api-id>.execute-api.us-east-1.amazonaws.com/dev/api/v1'`
+   - Production: `apiUrl: 'https://vxl59hhtk9.execute-api.us-east-1.amazonaws.com/dev/api/v1'`
 4. Run the app in development mode:
    ```bash
    ng serve
