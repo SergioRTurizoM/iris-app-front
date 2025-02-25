@@ -1,6 +1,6 @@
 [build]
   command = "npm run build"
-  publish = "dist/iris-front/browser"
+  publish = "dist/iris-front"
 
 [[redirects]]
   from = "/*"
