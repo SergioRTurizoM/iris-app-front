@@ -2,6 +2,9 @@
   command = "npm run build:ssr"
   publish = "dist/iris-front/browser"
 
+[functions]
+  directory = "netlify/functions"
+
 [[redirects]]
   from = "/*"
   to = "/.netlify/functions/angular-ssr"
