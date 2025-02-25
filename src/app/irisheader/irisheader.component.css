@@ -1,0 +1,11 @@
+.iris-header {
+  background-color: #5cd2c5;
+  padding: 10px 20px;
+  border-radius: 8px 8px 0 0;
+}
+
+.iris-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

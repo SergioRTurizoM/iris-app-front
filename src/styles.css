@@ -1,1 +1,27 @@
-/* You can add global styles to this file, and also import other style files */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.main {
+  width: 100%;
+  max-width: 800px;
+  padding: 1rem;
+}
+
+
+.content-container {
+  background-color: #fff;
+  padding: 3px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+

@@ -1,0 +1,57 @@
+<div class="content">
+  <app-irisheader></app-irisheader>
+
+  <div class="container">
+    <h1>To do list</h1>
+
+    <div class="controls-row">
+      <select (change)="setFilter($event)">
+        <option value="All">All</option>
+        <option value="Completed">Completed</option>
+        <option value="Pending">Pending</option>
+      </select>
+      <form [formGroup]="newTaskForm" (ngSubmit)="addTask()" class="input-icon-group">
+        <label for="newTaskInput" class="visually-hidden">New Task</label>
+        <input id="newTaskInput" placeholder="New task..." formControlName="task" class="full-width" />
+        <button type="submit" class="icon-button">
+          <span class="material-icons">add</span>
+        </button>
+      </form>
+    </div>
+
+    <div class="section-title">
+      {{ filter }}
+    </div>
+
+    <ul class="todo-list">
+
+      @for (task of filteredTasks; track trackByTaskId($index,task)) {
+      <li>
+        <label class="checkbox-container">
+          <input type="checkbox" [id]="'checkbox-' + task.id" [checked]="task.completed"
+            (change)="toggleTaskCompletion(task.id)" />
+          <span class="checkmark"></span>
+        </label>
+
+
+        @if (!task.editing) {
+        <span class="task-text" [class.completed]="task.completed" (click)="toggleTaskEditing(task.id)"
+          (keydown.enter)="updateTask(task.id, task.text)">
+          {{ task.text }}
+        </span>
+        }
+
+
+        @if (task.editing) {
+        <input class="edit-input" [(ngModel)]="task.text" (blur)="updateTask(task.id, task.text)"
+          (keydown.enter)="updateTask(task.id, task.text)" />
+        }
+        <button class="delete-button" (click)="deleteTask(task.id);
+          $event.stopPropagation()"> <span class="material-icons">close</span></button>
+      </li>
+      }
+
+    </ul>
+  </div>
+  <button class="logout-button" (click)="logout()">Exit</button>
+</div>
