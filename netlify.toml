@@ -1,8 +1,9 @@
 [build]
-  command = "ng build --configuration production"
-  publish = "dist/iris-front"
+  command = "npm run build:ssr"
+  publish = "dist/iris-front/browser"
+  functions = "netlify/functions"
 
 [[redirects]]
   from = "/*"
-  to = "/index.html"
+  to = "/.netlify/functions/angular-ssr"
   status = 200
